@@ -1,18 +1,17 @@
 {% extends "base.html" %} 
 
 {% block content %}
-
-<div>
-    <p> Input a web link below </p>
-    <p>  </p>
-    <p>  </p>
-</div>
-
-<form method="POST">
-    {% csrf_token %}
-    {{ form.as_p }}
-
-    <input type="submit", value="Shorten your link" />
-</form>
+    <div class="form-container">
+        <div class="instructions">
+            <p> Input a web link below. This must begin with 'http://'</p>
+            <p>  Click 'Shorten your link' to generate the shortened link</p>
+        </div>
+    
+        <form class="input-form" method="POST">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input class="submit-btn" type="submit", value="Shorten your link" />
+        </form>
+    </div>
 
 {% endblock content %}

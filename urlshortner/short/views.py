@@ -3,6 +3,7 @@ from .forms import NewForm
 from .models import Http
 from django.contrib import messages
 
+
 # Imports for random url
 import random
 import string
@@ -18,7 +19,9 @@ def shortener(request):
             shortened_url = Http(original=original,shortened=shortened)
             shortened_url.save()
 
-            messages.info(request, 'Here is your URL: ' + shortened_url.shortened)
+            messages.info(request, 'Here is your URL: ' + shortened_url.shortened) 
+            messages.info(request,' To view this, add /'+ shortened_url.shortened + 'to the end of the web address')
+            messages.info(request,'E.G: http://127.0.0.1:8000/'+ shortened_url.shortened)
 
             return redirect('/')
     else:
