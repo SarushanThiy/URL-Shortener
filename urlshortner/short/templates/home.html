@@ -1,0 +1,18 @@
+{% extends "base.html" %} 
+
+{% block content %}
+
+<div>
+    <p> Input a web link below </p>
+    <p>  </p>
+    <p>  </p>
+</div>
+
+<form method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <input type="submit", value="Shorten your link" />
+</form>
+
+{% endblock content %}
