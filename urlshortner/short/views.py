@@ -32,6 +32,10 @@ def shortener(request):
     context = {'form': form, 'data': data}
     return render(request, "home.html", context)
 
+def redirect(request, shortened_link):
+    data = Http.objects.get(shortened=shortened_link)
+    return redirect(data.original)
+
 # Errors
 def not_found_404(request, exception):
     data={'err': exception}
