@@ -8,7 +8,7 @@ from django.contrib import messages
 import random
 import string
 
-
+# Function for shortening URL
 def shortener(request):
     if request.method == 'POST':
         form  = NewForm(request.POST)
@@ -32,6 +32,7 @@ def shortener(request):
     context = {'form': form, 'data': data}
     return render(request, "home.html", context)
 
+# Makes the shortened link go to original link's page
 def link_redirect(request, shortened_link):
     data = Http.objects.get(shortened=shortened_link)
     return redirect(data.original)
@@ -40,7 +41,7 @@ def link_redirect(request, shortened_link):
 # Errors
 def not_found_404(request, exception):
     data={'err': exception}
-    return render(request, '404.html', data)
+    return render(request, '404.html')
 
 def server_error_500(request):
     return render(request, '500.html')
