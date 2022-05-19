@@ -10,7 +10,10 @@
         <form class="input-form" method="POST">
             {% csrf_token %}
             {{ form.as_p }}
-            <input class="submit-btn" type="submit", value="Shorten your link" />
+            <!-- <input class="submit-btn" type="submit", value="Shorten your link" /> -->
+            <button data-hover="click me!">
+                <div class="hover-me">Shorten your link!</div>
+            </button>
         </form>
     </div>
 
