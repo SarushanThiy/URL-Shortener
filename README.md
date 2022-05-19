@@ -19,6 +19,14 @@ An app that will shorten your URLS.
 - Python
 - Django
 
+## Win and Challenges
+### Wins
+- Fully functional app
+
+### Challenges
+- Creating a new link without 'http://' within the original link
+- Deployment vis Heroku with Django
+
 ## Bugs
 - 404 and 500 pages don't route properly
 

@@ -20,8 +20,8 @@ def shortener(request):
             shortened_url.save()
 
             messages.info(request, 'Here is your URL: ' + shortened_url.shortened) 
-            messages.info(request,' To view this, add /'+ shortened_url.shortened + 'to the end of the web address')
-            messages.info(request,'E.G: http://127.0.0.1:8000/'+ shortened_url.shortened)
+            messages.info(request,' To view this, add /'+ shortened_url.shortened + ' to the end of the web address')
+            messages.info(request,'Alternatively copy the following link into your browser: http://127.0.0.1:8000/'+ shortened_url.shortened)
 
             return redirect('/')
     else:
